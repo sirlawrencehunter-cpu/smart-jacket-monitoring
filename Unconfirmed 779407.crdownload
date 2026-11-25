@@ -1,0 +1,221 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "93e2ce53-cdd5-4073-8e8e-d0c959cdd1cd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Streamlit: 1.52.1\n",
+      "Pandas: 2.3.3\n",
+      "Plotly: 6.5.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "import streamlit\n",
+    "import pandas\n",
+    "import plotly\n",
+    "\n",
+    "print(\"Streamlit:\", streamlit.__version__)\n",
+    "print(\"Pandas:\", pandas.__version__)\n",
+    "print(\"Plotly:\", plotly.__version__)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "ee2dbd90-ed17-43c7-b06c-986ad8f1d9c3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Overwriting app.py\n"
+     ]
+    }
+   ],
+   "source": [
+    "%%writefile app.py\n",
+    "\n",
+    "import streamlit as st\n",
+    "\n",
+    "st.title(\"Smart Jacket Monitoring System\")\n",
+    "\n",
+    "st.subheader(\"Underground Miner Monitoring\")\n",
+    "\n",
+    "st.write(\"Welcome to the Smart Jacket Dashboard!\")\n",
+    "\n",
+    "st.metric(\n",
+    "    label=\"PIR Sensor Status\",\n",
+    "    value=\"NO MOVEMENT\"\n",
+    ")\n",
+    "\n",
+    "st.success(\"System is running.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "55bb433c-ed55-466c-ae85-6cdd07ead961",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "/home/6e567adb-b778-4bb3-a880-333e1b2dd8d9/app.py\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "import os\n",
+    "\n",
+    "print(os.path.abspath(\"app.py\"))\n",
+    "print(os.path.exists(\"app.py\"))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "f8e1f5a5-3447-4967-a1ed-3eff66bfe6c6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Current folder: /home/6e567adb-b778-4bb3-a880-333e1b2dd8d9\n",
+      "App file exists: True\n"
+     ]
+    }
+   ],
+   "source": [
+    "import os\n",
+    "\n",
+    "print(\"Current folder:\", os.getcwd())\n",
+    "print(\"App file exists:\", os.path.exists(\"app.py\"))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "14d25da3-d9d3-4b0f-8d78-b28281e823ed",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Python executable: /opt/conda/envs/anaconda-2025.12-py312/bin/python\n",
+      "Streamlit version: 1.52.1\n",
+      "Python version: 3.12.12 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 20:16:04) [GCC 11.2.0]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import sys\n",
+    "import streamlit\n",
+    "\n",
+    "print(\"Python executable:\", sys.executable)\n",
+    "print(\"Streamlit version:\", streamlit.__version__)\n",
+    "print(\"Python version:\", sys.version)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "25110b9e-f863-4222-8a1b-6b0f2d618596",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "/home/6e567adb-b778-4bb3-a880-333e1b2dd8d9\n",
+      "['.local', '.jupyter', '.pythonstartup.py', '.cache', '.ipython', 'Untitled.ipynb', 'untitled.py', 'README.ipynb', '.vimrc', 'anaconda_projects', '.anaconda', 'app.py', '.conda', '.npm', '.virtualenvs', '.gitconfig', '.ipynb_checkpoints', 'untitled1.py', '.profile', '.bashrc']\n"
+     ]
+    }
+   ],
+   "source": [
+    "import os\n",
+    "\n",
+    "print(os.getcwd())\n",
+    "print(os.listdir())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "868b2745-bcc4-40be-bb8a-1c67196ae824",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.\n",
+      "\u001b[0m\n",
+      "\u001b[0m\n",
+      "\u001b[34m\u001b[1m  You can now view your Streamlit app in your browser.\u001b[0m\n",
+      "\u001b[0m\n",
+      "\u001b[34m  Local URL: \u001b[0m\u001b[1mhttp://localhost:8501\u001b[0m\n",
+      "\u001b[34m  Network URL: \u001b[0m\u001b[1mhttp://10.0.0.252:8501\u001b[0m\n",
+      "\u001b[34m  External URL: \u001b[0m\u001b[1mhttp://10.0.0.252:8501\u001b[0m\n",
+      "\u001b[0m\n"
+     ]
+    }
+   ],
+   "source": [
+    "!streamlit run app.py --server.port 8501"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "23b4ceb0-887c-4024-8b83-cacacc94fb55",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from google.colab import files\n",
+    "files.download(\"app.py\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e88efad0-e83c-470d-8ba7-2b08bb8329ed",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "anaconda-2025.12-py312",
+   "language": "python",
+   "name": "conda-env-anaconda-2025.12-py312-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
